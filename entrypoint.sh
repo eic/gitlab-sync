@@ -4,7 +4,8 @@ git remote add target https://${INPUT_TARGET_USERNAME}:${INPUT_TARGET_TOKEN}@${I
 
 case "${GITHUB_EVENT_NAME}" in
     push|create|pull_request)
-        git push -f --mirror --prune target
+        git push -f --all target
+        git push -f --prune target
         git push -f --tags target
         ;;
     delete)
