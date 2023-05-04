@@ -1,11 +1,11 @@
-# Git Repo Sync
+# gitlab-sync
+[![Build](https://github.com/kroese/gitlab-sync/workflows/Build/badge.svg)](https://github.com/kroese/gitlab-sync/)
+[![Version](https://img.shields.io/github/v/tag/kroese/gitlab-sync?label=version&color=066da5)](https://github.com/kroese/gitlab-sync/)
+[![Size](https://img.shields.io/github/languages/code-size/kroese/gitlab-sync?label=size&color=066da5)](https://github.com/kroese/gitlab-sync/)
 
-![build](https://github.com/wangchucheng/git-repo-sync/workflows/build/badge.svg)
-![license](https://img.shields.io/github/license/wangchucheng/git-repo-sync)
+Action to synchronize code to GitLab.
 
-Git Repo Sync enables you to synchronize code to other code management platforms, such as GitLab, Gitee, etc.
-
-## Try Git Repo Sync
+## Usage
 
 You can use the following example as a template to create a new file with any name under `.github/workflows/`.
 
@@ -19,14 +19,14 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    name: Git Repo Sync
+    name: Gitlab Sync
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - uses: wangchucheng/git-repo-sync@v0.1.0
+    - uses: kroese/gitlab-sync@v1
       with:
-        # Such as https://github.com/wangchucheng/git-repo-sync.git
+        # Such as https://github.com/kroese/gitlab-sync.git
         target-url: <target-url>
         # Such as wangchucheng
         target-username: <target-username>
