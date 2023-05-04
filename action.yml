@@ -1,5 +1,5 @@
-name: 'Git Repo Sync'
-description: 'Git Repo Sync enables you to synchronize code to other code management platforms, such as GitLab, Gitee, etc.'
+name: 'Gitlab Sync'
+description: 'Action to synchronize code to GitLab.'
 
 branding:
   icon: upload-cloud
@@ -7,13 +7,13 @@ branding:
 
 inputs:
   target-url:
-    description: 'Target Repo URL'
+    description: 'Gitlab repo URL'
     required: true
   target-username:
-    description: 'Target Repo Username'
+    description: 'Gitlab username'
     required: true
   target-token:
-    description: 'Target Token'
+    description: 'Gitlab token'
     required: true
 runs:
   using: "composite"
