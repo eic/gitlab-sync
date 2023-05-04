@@ -6,13 +6,13 @@ branding:
   color: gray-dark
 
 inputs:
-  target-url:
+  url:
     description: 'Gitlab repo URL'
     required: true
-  target-username:
+  username:
     description: 'Gitlab username'
     required: true
-  target-token:
+  token:
     description: 'Gitlab token'
     required: true
 runs:
@@ -21,7 +21,7 @@ runs:
     - run: ${{ github.action_path }}/entrypoint.sh
       shell: bash
       env:
-        INPUT_TARGET_URL: ${{ inputs.target-url }}
-        INPUT_TARGET_USERNAME: ${{ inputs.target-username }}
-        INPUT_TARGET_TOKEN: ${{ inputs.target-token }}
+        INPUT_TARGET_URL: ${{ inputs.url }}
+        INPUT_TARGET_USERNAME: ${{ inputs.username }}
+        INPUT_TARGET_TOKEN: ${{ inputs.token }}
         GITHUB_EVENT_REF: ${{ github.event.ref }}
