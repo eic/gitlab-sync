@@ -25,10 +25,10 @@ jobs:
         fetch-depth: 0
      - uses: kroese/gitlab-sync@v1
       with:
-        #target-url: ${{ secrets.GITLAB_URL }}
-        target-url: https://gitlab.com/${{ github.repository }}.git
-        #target-username: ${{ secrets.GITLAB_USERNAME }}
-        target-username: ${{ github.actor }}
+        #url: ${{ secrets.GITLAB_URL }}
+        url: https://gitlab.com/${{ github.repository }}.git
+        #username: ${{ secrets.GITLAB_USERNAME }}
+        username: ${{ github.actor }}
         # Personal access token from gitlab.com 
-        target-token: ${{ secrets.GITLAB_TOKEN }}
+        token: ${{ secrets.GITLAB_TOKEN }}
 ```
