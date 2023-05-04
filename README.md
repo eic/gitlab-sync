@@ -7,29 +7,28 @@ Action to synchronize code to GitLab.
 
 ## Usage
 
-You can use the following example as a template to create a new file with any name under `.github/workflows/`.
-
 ```yaml
-name: <action-name>
+name: Gitlab Sync
 
-on: 
-  - push
-  - delete
+on:
+  push:
+    branches:
+    - main
 
 jobs:
   sync:
-    runs-on: ubuntu-latest
     name: Gitlab Sync
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - uses: kroese/gitlab-sync@v1
+     - uses: kroese/gitlab-sync@v1
       with:
-        # Such as https://github.com/kroese/gitlab-sync.git
-        target-url: <target-url>
-        # Such as wangchucheng
-        target-username: <target-username>
-        # You can store token in your project's 'Setting > Secrets' and reference the name here. Such as ${{ secrets.ACCESS_TOKEN }}
-        target-token: <target-token>
+        #target-url: ${{ secrets.GITLAB_URL }}
+        target-url: https://gitlab.com/${{ github.repository }}.git
+        #target-username: ${{ secrets.GITLAB_USERNAME }}
+        target-username: ${{ github.actor }}
+        # Personal access token from gitlab.com 
+        target-token: ${{ secrets.GITLAB_TOKEN }}
 ```
