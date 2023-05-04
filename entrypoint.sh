@@ -21,10 +21,10 @@ push|create|pull_request)
   git push -f --tags target
     ;;
 delete)
-  git push -d target ${GITHUB_EVENT_REF}
+  git push -d target "${GITHUB_EVENT_REF}"
     ;;
 *)
-  break
+  #break
 esac
 
 # vim:
