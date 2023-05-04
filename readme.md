@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-     - uses: kroese/gitlab-sync@v1
+     - uses: kroese/gitlab-sync@v2
       with:
         #url: ${{ secrets.GITLAB_URL }}
         url: https://gitlab.com/${{ github.repository }}.git
