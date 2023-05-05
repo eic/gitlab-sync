@@ -3,7 +3,7 @@
 [![Version](https://img.shields.io/github/v/tag/kroese/gitlab-sync?label=version&color=066da5)](https://github.com/kroese/gitlab-sync/)
 [![Size](https://img.shields.io/github/languages/code-size/kroese/gitlab-sync?label=size&color=066da5)](https://github.com/kroese/gitlab-sync/)
 
-Action to synchronize code to GitLab.
+Action to mirror a repository to GitLab.
 
 ## Usage
 
