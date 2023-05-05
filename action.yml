@@ -7,13 +7,13 @@ branding:
 
 inputs:
   url:
-    description: 'Gitlab repo URL'
+    description: 'GitLab repo URL'
     required: true
   username:
-    description: 'Gitlab username'
+    description: 'GitLab username'
     required: true
   token:
-    description: 'Gitlab token'
+    description: 'GitLab token'
     required: true
 runs:
   using: "composite"
