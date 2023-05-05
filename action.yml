@@ -1,8 +1,8 @@
 name: 'Gitlab Sync'
-description: 'Action to synchronize code to GitLab.'
+description: 'Action to mirror a repository to GitLab.'
 
 branding:
-  icon: upload-cloud
+  icon: copy
   color: gray-dark
 
 inputs:
