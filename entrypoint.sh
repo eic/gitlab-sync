@@ -27,4 +27,3 @@ delete)
   #break
 esac
 
-# vim:
