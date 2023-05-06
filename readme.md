@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-     - uses: action-pack/gitlab-sync@v2
+     - uses: action-pack/gitlab-sync@v3
       with:
         #url: ${{ secrets.GITLAB_URL }}
         url: https://gitlab.com/${{ github.repository }}.git
