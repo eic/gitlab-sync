@@ -10,11 +10,7 @@ Action to mirror a repository to GitLab.
 ```yaml
 name: Gitlab Sync
 
-on:
-  push:
-    branches:
-    - main
-    - master
+on: [push, pull_request, create, delete]
 
 jobs:
   sync:
