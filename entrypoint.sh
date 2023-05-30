@@ -10,20 +10,19 @@ function git-setup() {
     "${INPUT_TARGET_URL#https://}"
   echo "git remote add target ${url}"
   git remote add target "${url}"
+  set -x
 }
 
-git-setup
-
 case "${GITHUB_EVENT_NAME}" in
-push|create|pull_request)
-  set -x
+push|create|pull_request|workflow_dispatch)
+  git-setup
   git fetch --all
   git push -f --all target
   git push -f --prune target
   git push -f --tags target
     ;;
 delete)
-  set -x
+  git-setup
   git push -d target "${GITHUB_EVENT_REF}"
     ;;
 *)
