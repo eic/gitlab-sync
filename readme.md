@@ -1,7 +1,11 @@
-# gitlab-sync
-[![Build](https://github.com/action-pack/gitlab-sync/workflows/Build/badge.svg)](https://github.com/action-pack/gitlab-sync/)
-[![Version](https://img.shields.io/github/v/tag/action-pack/gitlab-sync?label=version&sort=semver&color=066da5)](https://github.com/marketplace/actions/gitlab-sync)
-[![Size](https://img.shields.io/github/languages/code-size/action-pack/gitlab-sync?label=size&color=066da5)](https://github.com/action-pack/gitlab-sync/)
+<h1 align="center">Gitlab Sync<br />
+<div align="center">
+  
+  [![Build](https://github.com/action-pack/gitlab-sync/workflows/Build/badge.svg)](https://github.com/action-pack/gitlab-sync/)
+  [![Version](https://img.shields.io/github/v/tag/action-pack/gitlab-sync?label=version&sort=semver&color=066da5)](https://github.com/marketplace/actions/gitlab-sync)
+  [![Size](https://img.shields.io/github/languages/code-size/action-pack/gitlab-sync?label=size&color=066da5)](https://github.com/action-pack/gitlab-sync/)
+  
+</div></h1>
 
 Action to mirror a repository to GitLab.
 
