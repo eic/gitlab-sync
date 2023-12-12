@@ -17,7 +17,7 @@ case "${GITHUB_EVENT_NAME}" in
 push|create|pull_request|workflow_dispatch)
   git-setup
   git fetch --all
-  git push -f --all target
+  git push -f ${INPUT_CISKIP:+-o ci.skip} --all target
   git push -f --prune target
   git push -f --tags target
     ;;
