@@ -16,7 +16,7 @@ inputs:
   token:
     description: "GitLab token"
     required: true
-  skipci:
+  ciskip:
     description: "Skip CI (default: false)"
     required: false
 runs:
@@ -28,5 +28,5 @@ runs:
         INPUT_TARGET_URL: ${{ inputs.url }}
         INPUT_TARGET_TOKEN: ${{ inputs.token }}
         INPUT_TARGET_USERNAME: ${{ inputs.username }}
-        INPUT_SKIPCI: ${{ inputs.skipci }}
+        INPUT_CISKIP: ${{ inputs.ciskip }}
         GITHUB_EVENT_REF: ${{ github.event.ref }}
