@@ -7,6 +7,10 @@ branding:
   color: "gray-dark"
 
 inputs:
+  remote:
+    description: "Git remote name (e.g. 'origin', 'remote'; default 'target')"
+    required: false
+    default: "target"
   url:
     description: "GitLab repo URL"
     required: true
@@ -25,6 +29,7 @@ runs:
     - run: ${{ github.action_path }}/entrypoint.sh
       shell: bash
       env:
+        INPUT_REMOTE: ${{ inputs.remote }}
         INPUT_TARGET_URL: ${{ inputs.url }}
         INPUT_TARGET_TOKEN: ${{ inputs.token }}
         INPUT_TARGET_USERNAME: ${{ inputs.username }}
