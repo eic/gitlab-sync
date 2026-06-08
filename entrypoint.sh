@@ -17,8 +17,14 @@ case "${GITHUB_EVENT_NAME}" in
 push|create|pull_request|workflow_dispatch)
   git-setup
   git fetch --all
+  # Recreate local branches from origin/* so --prune has a stable source side
+  # (GitHub Actions checkout is normally detached HEAD, and origin/HEAD is
+  # not a valid branch name on the target).
+  git for-each-ref --format='%(refname:strip=3)' refs/remotes/origin/ \
+    | grep -vE '^HEAD$' \
+    | while read -r b; do git branch -f "$b" "refs/remotes/origin/$b"; done
   git push -f ${INPUT_CISKIP:+-o ci.skip} --all ${INPUT_REMOTE}
-  git push -f --prune ${INPUT_REMOTE} "refs/remotes/origin/*:refs/heads/*"
+  git push -f --prune ${INPUT_REMOTE} "refs/heads/*:refs/heads/*"
   git push -f --tags ${INPUT_REMOTE}
     ;;
 delete)
