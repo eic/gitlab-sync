@@ -17,6 +17,9 @@ case "${GITHUB_EVENT_NAME}" in
 push|create|pull_request|workflow_dispatch)
   git-setup
   git fetch --all
+  # Detach HEAD so that git branch -f can update every branch (including the
+  # one currently checked out by the Actions runner).
+  git checkout --detach HEAD
   # Recreate local branches from origin/* so --prune has a stable source side
   # (GitHub Actions checkout is normally detached HEAD, and origin/HEAD is
   # not a valid branch name on the target).
