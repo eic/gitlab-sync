@@ -28,7 +28,7 @@ push|create|pull_request|workflow_dispatch)
     | while read -r b; do git branch -f "$b" "refs/remotes/origin/$b"; done
   git push -f ${INPUT_CISKIP:+-o ci.skip} --all ${INPUT_REMOTE}
   git push -f --prune ${INPUT_REMOTE} "refs/heads/*:refs/heads/*"
-  git push -f --tags ${INPUT_REMOTE}
+  git push -f ${INPUT_CISKIP:+-o ci.skip} --tags ${INPUT_REMOTE}
     ;;
 delete)
   git-setup
